@@ -5,7 +5,7 @@ import io.ktor.server.config.ApplicationConfig
 object ControllerUtils {
 
     fun getRootPath(appConfig: ApplicationConfig): String {
-        return appConfig.propertyOrNull("ktor.deployment.rootPath")?.getString()?.let { "/${dropSlashes(it)}" } ?: ""
+        return appConfig.propertyOrNull("ktor.deployment.rootPath")?.getString()?.let { dropSlashes(it) } ?: ""
     }
 
     fun dropSlashes(str: String): String {
